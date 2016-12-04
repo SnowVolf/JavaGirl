@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="snackbarbuilder-0.7.0">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.github.andrewlord1990/snackbarbuilder/0.7.0/jars/classes.jar!/" />
+      <root url="file://$PROJECT_DIR$/app/build/intermediates/exploded-aar/com.github.andrewlord1990/snackbarbuilder/0.7.0/res" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.andrewlord1990/snackbarbuilder/0.7.0/e30b1174fa708f20562b8a7add9bcc7bc4846d81/snackbarbuilder-0.7.0-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
