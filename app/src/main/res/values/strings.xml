@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<!--common-->
+    <string name="application_name">JavaGirl</string>
+	<string name="visit_profile">Web [4pda]</string>
+	<string name="exit">Exit</string>
+    <string name="hello_world">Hello world!</string>
+	<string name="permission_granted">Разрешение получено</string>
+	<string name="permission_denied">Разрешение не полученл</string>
+	<!--GirlDialog-->
+	<string name="yes">Да</string>
+	<string name="no">Нет</string>
+	<string name="random">Рандом</string>
+	<string name="deviant_art">DeviantArt</string>
+	<string name="da_author">Автор картинки: NeoArtCore @ DeviantArt\nОткрыть страницу в браузере?</string>
+	<string name="open_in">Открыть страницу в браузере?</string>
+	<string name="toast_ne_hochesh">Ну не хочешь, как хочешь...</string>
+	
+
+</resources>
