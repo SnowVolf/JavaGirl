@@ -1,16 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
-	<!--common-->
-    <string name="application_name">JavaGirl</string>
-	<string name="visit_profile">Web [4pda]</string>
-	<string name="exit">Exit</string>
-	<!--GirlDialog-->
-	<string name="yes">Да</string>
-	<string name="no">Нет</string>
-	<string name="random">Рандом</string>
-	<string name="deviant_art">DeviantArt</string>
-	<string name="da_author">Автор картинки: NeoArtCore @ DeviantArt\nОткрыть страницу в браузере?</string>
-	<string name="da_min">DA</string>
-
-
+    <string name="app_name">JavaGirl</string>
+    <string name="github">GitHub</string>
+    <string name="about_program">О программе</string>
+    <string name="_4pda">4pda</string>
+    <string name="da_abbr">DA</string>
+    <string name="exit">Выход</string>
+    <string name="javagirl_ver">JavaGirl v.1.0.3</string>
+    <string name="created_by">Created with AndroidStudio v.2.2.2</string>
+    <string name="change_log">История изменений</string>
 </resources>

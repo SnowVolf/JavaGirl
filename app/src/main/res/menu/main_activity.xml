@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/visit_git"
+        android:title="@string/github"
+        android:orderInCategory="100"/>
+    <item
+        android:id="@+id/changelog"
+        android:title="@string/change_log"
+        android:orderInCategory="200"/>
+    <item
+        android:id="@+id/about"
+        android:title="@string/about_program"
+        android:orderInCategory="300"/>
+
+</menu>
