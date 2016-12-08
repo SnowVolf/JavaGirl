@@ -10,7 +10,11 @@
         android:layout_height="match_parent"
         android:layout_width="wrap_content"
         android:layout_gravity="start"
-        app:menu="@menu/main_activity"/>
+        android:id="@+id/nav_view">
+        <include layout="@layout/drw_head"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </android.support.design.widget.NavigationView>
 <LinearLayout
     android:id="@+id/activity_main"
     android:orientation="vertical"
@@ -24,8 +28,8 @@
         android:background="@color/colorPrimary"
         android:textColor="#ffffff"
         android:text="@string/javagirl_ver"
-        android:minHeight="?attr/actionBarSize"
-        />
+        android:minHeight="?attr/actionBarSize"/>
+
 
     <include layout="@layout/girl" />
 

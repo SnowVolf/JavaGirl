@@ -1,11 +1,33 @@
 <resources>
+    <!--MainActivity-->
+    <string name="created_by">AndroidStudio v.2.2.3</string>
     <string name="app_name">JavaGirl</string>
     <string name="github">GitHub</string>
     <string name="about_program">О программе</string>
     <string name="_4pda">4pda</string>
     <string name="da_abbr">DA</string>
     <string name="exit">Выход</string>
-    <string name="javagirl_ver">JavaGirl v.1.0.3</string>
-    <string name="created_by">Created with AndroidStudio v.2.2.2</string>
+    <string name="javagirl_ver">JavaGirl</string>
     <string name="change_log">История изменений</string>
+    <string name="about_content">Автор:\nSnow Volf (Артём Жиганов)\nLicenced under the MIT LICENSE\nДата компиляции: 07.12.2016 21:54</string>
+    <string name="cle_ar">Понятно</string>
+    <string name="coming_soon">Скоро…</string>
+    <string name="settings">Настройки</string>
+    <!--dummy test-->
+    <string name="ok">OK</string>
+    <string name="hello">Привет</string>
+    <string name="jgv2">JavaGirl v2</string>
+    <string name="powered_me">Powered by Snow Volf</string>
+    <string name="image_provided">Image Provided by NeoArtCore</string>
+    <string name="test_1">ТЕСТ</string>
+    <string name="test_2">ТЕСТ2</string>
+    <string name="test_3">ТЕСТ3</string>
+    <string name="test_4">ТЕСТ4</string>
+    <string name="test_5">ТЕСТ5</string>
+    <string name="test_6">ТЕСТ6</string>
+    <string name="test_7">ТЕСТ7</string>
+    <string name="test_8">ТЕСТ8</string>
+    <string name="test_9">ТЕСТ9</string>
+    <string name="test_10">ТЕСТ10</string>
+
 </resources>

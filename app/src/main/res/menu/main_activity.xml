@@ -1,16 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:xmls="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/tools">
+    <item
+        android:id="@+id/settings"
+        android:title="@string/settings"
+        android:icon="@drawable/ic_settings"
+        app:showAsAction="always"
+        android:orderInCategory="100"/>
     <item
         android:id="@+id/visit_git"
         android:title="@string/github"
-        android:orderInCategory="100"/>
+        android:orderInCategory="200"/>
     <item
         android:id="@+id/changelog"
         android:title="@string/change_log"
-        android:orderInCategory="200"/>
+        android:orderInCategory="300"/>
     <item
         android:id="@+id/about"
         android:title="@string/about_program"
-        android:orderInCategory="300"/>
+        android:orderInCategory="400"/>
 
 </menu>
