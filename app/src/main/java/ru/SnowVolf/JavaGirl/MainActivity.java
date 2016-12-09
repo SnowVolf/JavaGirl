@@ -27,6 +27,7 @@ import com.afollestad.materialdialogs.MaterialDialog;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Objects;
 
 public class MainActivity extends AppCompatActivity {
     @Override
@@ -60,13 +61,18 @@ public class MainActivity extends AppCompatActivity {
         }else if (id == R.id.changelog){
             showChangelog();
             return true;
+        }else if (id==R.id.settings) {
+            Intent intent = new Intent(this, SettingsActivity.class);
+            startActivity(intent);
+            return true;
         }
-        return super.onOptionsItemSelected(item);
+            return super.onOptionsItemSelected(item);
+
     }
     public void GoToGit(){
         Uri uri = Uri.parse("https://github.com/SnowVolf/JavaGirl/");
-        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-        startActivity(intent);
+            Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+            startActivity(intent);
     }
     //собираем инфу о приложении
     public void showAboutDialog(){
@@ -127,6 +133,7 @@ public class MainActivity extends AppCompatActivity {
                 sb.append(line).append("\n");
             }
         } catch (IOException e) {
+            e.printStackTrace();
         }
         final String clToast = "<b><font color=\"#c62828\">Powered by Snow Volf</font><p><font color=\"#1565c0\"><i>А это текст другого цвета с курсивом</i></font></b><p>A вот это обычный не текст";
         new MaterialDialog.Builder(this)

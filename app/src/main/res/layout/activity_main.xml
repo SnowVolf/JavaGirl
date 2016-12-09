@@ -21,18 +21,8 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     tools:context="ru.SnowVolf.JavaGirl.MainActivity">
-    <android.support.v7.widget.Toolbar
-        android:id="@+id/ToolBar"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/colorPrimary"
-        android:textColor="#ffffff"
-        android:text="@string/javagirl_ver"
-        android:minHeight="?attr/actionBarSize"/>
-
-
-    <include layout="@layout/girl" />
-
+    <include layout="@layout/toolbar"/>
+    <include layout="@layout/girl"/>
     <LinearLayout
         android:orientation="horizontal"
         android:layout_width="fill_parent"
@@ -43,20 +33,17 @@
             android:onClick="onWebClick"
             android:layout_weight="1.0"
             android:layout_width="wrap_content" />
-
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="onDeviantArtClick"
             android:text="@string/da_abbr"/>
-
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/exit"
             android:onClick="onExitClick"
             android:layout_weight="1.0"/>
-
     </LinearLayout>
 </LinearLayout>
 </android.support.v4.widget.DrawerLayout>

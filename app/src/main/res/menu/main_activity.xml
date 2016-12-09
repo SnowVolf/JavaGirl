@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:xmls="http://schemas.android.com/apk/res-auto"
+<menu xmlns:app2="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/tools">
+    <group
+        android:id="@+id/inv"
+        android:enabled="true">
     <item
         android:id="@+id/settings"
         android:title="@string/settings"
         android:icon="@drawable/ic_settings"
-        app:showAsAction="always"
-        android:orderInCategory="100"/>
+        app:showAsAction="ifRoom"/>
+    </group>
     <item
         android:id="@+id/visit_git"
-        android:title="@string/github"
-        android:orderInCategory="200"/>
+        android:title="@string/github" />
     <item
         android:id="@+id/changelog"
-        android:title="@string/change_log"
-        android:orderInCategory="300"/>
+        android:title="@string/change_log" />
     <item
         android:id="@+id/about"
-        android:title="@string/about_program"
-        android:orderInCategory="400"/>
+        android:title="@string/about_program" />
 
 </menu>
