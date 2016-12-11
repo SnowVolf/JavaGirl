@@ -76,10 +76,6 @@
         "source": "C:\\ProjectX\\JavaGirl_V2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\drawable\\notification_bg.xml"
     },
     {
-        "merged": "C:\\ProjectX\\JavaGirl_V2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_search_black_24dp.xml",
-        "source": "C:\\ProjectX\\JavaGirl_V2\\app\\src\\main\\res\\drawable\\ic_search_black_24dp.xml"
-    },
-    {
         "merged": "C:\\ProjectX\\JavaGirl_V2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\design_snackbar_background.xml",
         "source": "C:\\ProjectX\\JavaGirl_V2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\25.0.1\\res\\drawable\\design_snackbar_background.xml"
     },
@@ -90,10 +86,6 @@
     {
         "merged": "C:\\ProjectX\\JavaGirl_V2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_btn_default_mtrl_shape.xml",
         "source": "C:\\ProjectX\\JavaGirl_V2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\drawable\\abc_btn_default_mtrl_shape.xml"
-    },
-    {
-        "merged": "C:\\ProjectX\\JavaGirl_V2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\drawer_background.xml",
-        "source": "C:\\ProjectX\\JavaGirl_V2\\app\\src\\main\\res\\drawable\\drawer_background.xml"
     },
     {
         "merged": "C:\\ProjectX\\JavaGirl_V2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_switch_thumb_material.xml",
@@ -160,6 +152,10 @@
         "source": "C:\\ProjectX\\JavaGirl_V2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\drawable\\abc_vector_test.xml"
     },
     {
+        "merged": "C:\\ProjectX\\JavaGirl_V2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\avatar_crop.jpg",
+        "source": "C:\\ProjectX\\JavaGirl_V2\\app\\src\\main\\res\\drawable\\avatar_crop.jpg"
+    },
+    {
         "merged": "C:\\ProjectX\\JavaGirl_V2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_ic_clear_material.xml",
         "source": "C:\\ProjectX\\JavaGirl_V2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\drawable\\abc_ic_clear_material.xml"
     },
@@ -178,6 +174,10 @@
     {
         "merged": "C:\\ProjectX\\JavaGirl_V2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\md_item_selected.xml",
         "source": "C:\\ProjectX\\JavaGirl_V2\\app\\build\\intermediates\\exploded-aar\\com.afollestad.material-dialogs\\core\\0.9.1.0\\res\\drawable\\md_item_selected.xml"
+    },
+    {
+        "merged": "C:\\ProjectX\\JavaGirl_V2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_arrow_back_white_24dp.xml",
+        "source": "C:\\ProjectX\\JavaGirl_V2\\app\\src\\main\\res\\drawable\\ic_arrow_back_white_24dp.xml"
     },
     {
         "merged": "C:\\ProjectX\\JavaGirl_V2\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\abc_seekbar_track_material.xml",

@@ -120,6 +120,15 @@
     </item>
     <item
         is-multidex="false"
+        jar="C:\Users\Пользователь\.gradle\caches\modules-2\files-2.1\com.github.jksiezni.permissive\permissive\0.1\c01c8680abc54727415bf51ca3a404356f43674a\permissive-0.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.1"
+        sha1="c01c8680abc54727415bf51ca3a404356f43674a">
+        <dex dex="C:\ProjectX\JavaGirl_V2\app\build\intermediates\pre-dexed\debug\permissive-0.1_c24e7d5d7d188e53ebbb5c5fe48d3a4e6b2503e7.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="C:\ProjectX\JavaGirl_V2\app\build\intermediates\exploded-aar\com.android.support\design\25.0.1\jars\classes.jar"
         jumboMode="false"
         optimize="true"

@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="ru.SnowVolf.JavaGirl"
-    android:versionCode="13"
-    android:versionName="1.0.12" >
+    android:versionCode="16"
+    android:versionName="1.1.2" >
 
     <uses-sdk
         android:minSdkVersion="19"
-        android:targetSdkVersion="24" />
+        android:targetSdkVersion="25" />
 
     <application
         android:allowBackup="true"
@@ -24,6 +24,9 @@
         <activity
             android:name="ru.SnowVolf.JavaGirl.SettingsActivity"
             android:label="@string/title_activity_settings" />
+        <activity
+            android:name="ru.SnowVolf.JavaGirl.AboutActivity"
+            android:label="@string/about_program" />
     </application>
 
 </manifest>

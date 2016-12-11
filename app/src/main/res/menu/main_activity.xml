@@ -2,15 +2,19 @@
 <menu xmlns:app2="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/tools">
+
     <group
         android:id="@+id/inv"
-        android:enabled="true">
+        android:enabled="false">
+        <item
+            android:id="@+id/open_girl"
+            android:title="Выбрать картинку"/>
+    </group>
     <item
         android:id="@+id/settings"
         android:title="@string/settings"
         android:icon="@drawable/ic_settings"
         app:showAsAction="ifRoom"/>
-    </group>
     <item
         android:id="@+id/visit_git"
         android:title="@string/github" />

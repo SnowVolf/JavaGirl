@@ -1,16 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:ns1="http://schemas.android.com/tools">
-    <string-array name="list_preference_entries">
-        <item>Entry 1</item>
-        <item>Entry 2</item>
-        <item>Entry 3</item>
-    </string-array>
-    <string-array name="list_preference_entry_values">
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-    </string-array>
-    <string-array name="multi_select_list_preference_default_value"/>
     <string-array name="pref_example_list_titles">
         <item>Всегда</item>
         <item>Когда возможно</item>
@@ -105,6 +94,7 @@
     <color name="background_floating_material_light">@android:color/white</color>
     <color name="background_material_dark">@color/material_grey_850</color>
     <color name="background_material_light">@color/material_grey_50</color>
+    <color name="black">#000000</color>
     <color name="bright_foreground_disabled_material_dark">#80ffffff</color>
     <color name="bright_foreground_disabled_material_light">#80000000</color>
     <color name="bright_foreground_inverse_material_dark">@color/bright_foreground_material_light</color>
@@ -627,7 +617,7 @@
     <dimen name="design_tab_text_size_2line">12sp</dimen>
     <item format="float" name="disabled_alpha_material_dark" type="dimen">0.30</item>
     <item format="float" name="disabled_alpha_material_light" type="dimen">0.26</item>
-    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="font_size">16sp</dimen>
     <item format="float" name="highlight_alpha_material_colored" type="dimen">0.26</item>
     <item format="float" name="highlight_alpha_material_dark" type="dimen">0.20</item>
     <item format="float" name="highlight_alpha_material_light" type="dimen">0.12</item>
@@ -740,13 +730,15 @@
     <string name="abc_shareactionprovider_share_with">Share with</string>
     <string name="abc_shareactionprovider_share_with_application">Share with %s</string>
     <string name="abc_toolbar_collapse_description">Collapse</string>
-    <string name="about_content">Автор:\nSnow Volf (Артём Жиганов)\nLicenced under the MIT LICENSE\nДата компиляции: 09.12.2016 23:31</string>
+    <string formatted="false" name="about_content">&lt;s>Java Girl - это тестовый проект, с помощью которого я (прокачиваю свои мозги) учусь редактировать и познавать smali путем декомпиляции java-src и глубокого анализа.\nПриложение достаточно примитивно, в нем нет каких-то особенных или сверхестевственных функций. Нет. Это почти что \"Hello World!\", который я патчу и обновляю.\nИсходники проекта находятся в свободном доступе на GitHub [Меню > GitHub]\n*******************************************\n*******************************************\nСейчас [декабрь 2016] у меня не особо много времени, поэтому множество из того что запланировано будет воплощено позднее (возможно на зимних каникулах).\n*******************************************\n*******************************************\nТакже в приложении есть changelog, из которого можно узнать как и что добаляется в приложение\n*******************************************\n*******************************************\nАвтор:\nSnow Volf (Артём Жиганов)\nLicenced under the MIT LICENSE\nДата компиляции: 11.12.2016 22:56&lt;/s></string>
     <string name="about_program">О программе</string>
+    <string name="alpha">alpha</string>
     <string name="app_name">JavaGirl</string>
     <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
     <string name="bottom_sheet_behavior" translatable="false">android.support.design.widget.BottomSheetBehavior</string>
     <string name="change_log">История изменений</string>
     <string name="character_counter_pattern" translatable="false">%1$d / %2$d</string>
+    <string name="choose_fork">Выберите ветку для посещения</string>
     <string name="cle_ar">Понятно</string>
     <string name="coming_soon">Скоро…</string>
     <string name="created_by">AndroidStudio v.2.2.3</string>
@@ -755,8 +747,8 @@
     <string name="github">GitHub</string>
     <string name="hello">Привет</string>
     <string name="image_provided">Image Provided by NeoArtCore</string>
-    <string name="javagirl_ver">JavaGirl</string>
     <string name="jgv2">JavaGirl v2</string>
+    <string name="master">master</string>
     <string name="ok">OK</string>
     <string name="powered_me">Powered by Snow Volf</string>
     <string name="pref_default_display_name">Snow Volf</string>
@@ -787,7 +779,6 @@
     <string name="test_7">ТЕСТ7</string>
     <string name="test_8">ТЕСТ8</string>
     <string name="test_9">ТЕСТ9</string>
-    <string name="title_activity_main2">Main2Activity</string>
     <string name="title_activity_settings">Settings</string>
     <style name="AlertDialog.AppCompat" parent="Base.AlertDialog.AppCompat"/>
     <style name="AlertDialog.AppCompat.Light" parent="Base.AlertDialog.AppCompat.Light"/>

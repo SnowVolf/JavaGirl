@@ -1,5 +1,6 @@
 <resources>
     <!--MainActivity-->
+    <string name="ok">OK</string>
     <string name="created_by">AndroidStudio v.2.2.3</string>
     <string name="app_name">JavaGirl</string>
     <string name="github">GitHub</string>
@@ -7,14 +8,15 @@
     <string name="_4pda">4pda</string>
     <string name="da_abbr">DA</string>
     <string name="exit">Выход</string>
-    <string name="javagirl_ver">JavaGirl</string>
     <string name="change_log">История изменений</string>
-    <string name="about_content">Автор:\nSnow Volf (Артём Жиганов)\nLicenced under the MIT LICENSE\nДата компиляции: 09.12.2016 23:31</string>
+    <string name="about_content" formatted="true"><![CDATA[Java Girl - это тестовый проект, с помощью которого я (прокачиваю свои мозги) учусь редактировать и познавать smali путем декомпиляции java-src и глубокого анализа.\nПриложение достаточно примитивно, в нем нет каких-то особенных или сверхестевственных функций. Нет. Это почти что \"Hello World!\", который я патчу и обновляю.\nИсходники проекта находятся в свободном доступе на GitHub [Меню > GitHub]\n*******************************************\n*******************************************\nСейчас [декабрь 2016] у меня не особо много времени, поэтому множество из того что запланировано будет воплощено позднее (возможно на зимних каникулах).\n*******************************************\n*******************************************\nТакже в приложении есть changelog, из которого можно узнать как и что добаляется в приложение\n*******************************************\n*******************************************\nАвтор:\nSnow Volf (Артём Жиганов)\nLicenced under the MIT LICENSE\nДата компиляции: 11.12.2016 22:56]]></string>
     <string name="cle_ar">Понятно</string>
     <string name="coming_soon">Скоро…</string>
     <string name="settings">Настройки</string>
+    <string name="master">master</string>
+    <string name="alpha">alpha</string>
+
     <!--dummy test-->
-    <string name="ok">OK</string>
     <string name="hello">Привет</string>
     <string name="jgv2">JavaGirl v2</string>
     <string name="powered_me">Powered by Snow Volf</string>
@@ -29,7 +31,6 @@
     <string name="test_8">ТЕСТ8</string>
     <string name="test_9">ТЕСТ9</string>
     <string name="test_10">ТЕСТ10</string>
-    <string name="title_activity_main2">Main2Activity</string>
     <string name="title_activity_settings">Settings</string>
 
     <!-- Strings related to Settings -->
@@ -77,20 +78,6 @@
         <item>-1</item>
     </string-array>
 
-    <string-array name="list_preference_entries">
-        <item>Entry 1</item>
-        <item>Entry 2</item>
-        <item>Entry 3</item>
-    </string-array>
-
-    <string-array name="list_preference_entry_values">
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-    </string-array>
-
-    <string-array name="multi_select_list_preference_default_value" />
-
     <string name="pref_title_system_sync_settings">Системные настройки</string>
 
     <!-- Example settings for Notifications -->
@@ -102,5 +89,5 @@
     <string name="pref_ringtone_silent">Тишина</string>
 
     <string name="pref_title_vibrate">Вибрация</string>
-
+    <string name="choose_fork">Выберите ветку для посещения</string>
 </resources>

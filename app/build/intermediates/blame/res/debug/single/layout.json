@@ -28,20 +28,20 @@
         "source": "C:\\ProjectX\\JavaGirl_V2\\app\\build\\intermediates\\exploded-aar\\com.afollestad.material-dialogs\\core\\0.9.1.0\\res\\layout\\md_dialog_progress_indeterminate_horizontal.xml"
     },
     {
-        "merged": "C:\\ProjectX\\JavaGirl_V2\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_select_dialog_material.xml",
-        "source": "C:\\ProjectX\\JavaGirl_V2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\layout\\abc_select_dialog_material.xml"
-    },
-    {
-        "merged": "C:\\ProjectX\\JavaGirl_V2\\app\\build\\intermediates\\res\\merged\\debug\\layout\\md_dialog_basic.xml",
-        "source": "C:\\ProjectX\\JavaGirl_V2\\app\\build\\intermediates\\exploded-aar\\com.afollestad.material-dialogs\\core\\0.9.1.0\\res\\layout\\md_dialog_basic.xml"
+        "merged": "C:\\ProjectX\\JavaGirl_V2\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_media_custom.xml",
+        "source": "C:\\ProjectX\\JavaGirl_V2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\layout\\notification_template_media_custom.xml"
     },
     {
         "merged": "C:\\ProjectX\\JavaGirl_V2\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_snackbar_include.xml",
         "source": "C:\\ProjectX\\JavaGirl_V2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\25.0.1\\res\\layout\\design_layout_snackbar_include.xml"
     },
     {
-        "merged": "C:\\ProjectX\\JavaGirl_V2\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_media_custom.xml",
-        "source": "C:\\ProjectX\\JavaGirl_V2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\layout\\notification_template_media_custom.xml"
+        "merged": "C:\\ProjectX\\JavaGirl_V2\\app\\build\\intermediates\\res\\merged\\debug\\layout\\md_dialog_basic.xml",
+        "source": "C:\\ProjectX\\JavaGirl_V2\\app\\build\\intermediates\\exploded-aar\\com.afollestad.material-dialogs\\core\\0.9.1.0\\res\\layout\\md_dialog_basic.xml"
+    },
+    {
+        "merged": "C:\\ProjectX\\JavaGirl_V2\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_select_dialog_material.xml",
+        "source": "C:\\ProjectX\\JavaGirl_V2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\layout\\abc_select_dialog_material.xml"
     },
     {
         "merged": "C:\\ProjectX\\JavaGirl_V2\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_bar_title_item.xml",
@@ -124,6 +124,14 @@
         "source": "C:\\ProjectX\\JavaGirl_V2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\layout\\abc_list_menu_item_radio.xml"
     },
     {
+        "merged": "C:\\ProjectX\\JavaGirl_V2\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_about_list.xml",
+        "source": "C:\\ProjectX\\JavaGirl_V2\\app\\src\\main\\res\\layout\\fragment_about_list.xml"
+    },
+    {
+        "merged": "C:\\ProjectX\\JavaGirl_V2\\app\\build\\intermediates\\res\\merged\\debug\\layout\\fragment_item.xml",
+        "source": "C:\\ProjectX\\JavaGirl_V2\\app\\src\\main\\res\\layout\\fragment_item.xml"
+    },
+    {
         "merged": "C:\\ProjectX\\JavaGirl_V2\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_expanded_menu_layout.xml",
         "source": "C:\\ProjectX\\JavaGirl_V2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\layout\\abc_expanded_menu_layout.xml"
     },
@@ -154,6 +162,10 @@
     {
         "merged": "C:\\ProjectX\\JavaGirl_V2\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_template_media.xml",
         "source": "C:\\ProjectX\\JavaGirl_V2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\layout\\notification_template_media.xml"
+    },
+    {
+        "merged": "C:\\ProjectX\\JavaGirl_V2\\app\\build\\intermediates\\res\\merged\\debug\\layout\\about_fragment.xml",
+        "source": "C:\\ProjectX\\JavaGirl_V2\\app\\src\\main\\res\\layout\\about_fragment.xml"
     },
     {
         "merged": "C:\\ProjectX\\JavaGirl_V2\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_material.xml",

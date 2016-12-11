@@ -3,12 +3,17 @@ apply plugin: 'com.android.application'
 android {
     compileSdkVersion 25
     buildToolsVersion "25.0.1"
+
+    dexOptions {
+        dexInProcess = true
+        preDexLibraries = true
+    }
     defaultConfig {
         applicationId "ru.SnowVolf.JavaGirl"
         minSdkVersion 19
-        targetSdkVersion 24
-        versionCode 13
-        versionName "1.0.12"
+        targetSdkVersion 25
+        versionCode 16
+        versionName "1.1.2"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
         vectorDrawables.useSupportLibrary = true
     }
@@ -19,7 +24,9 @@ android {
         }
     }
 }
-
+repositories{
+    maven { url "https://jitpack.io" }
+}
 dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
@@ -30,5 +37,6 @@ dependencies {
     compile 'com.afollestad.material-dialogs:core:0.9.1.0'
     compile 'com.android.support:support-v4:25.0.1'
     compile 'com.android.support:support-vector-drawable:25.0.1'
+    compile 'com.github.jksiezni.permissive:permissive:0.1'
     testCompile 'junit:junit:4.12'
 }

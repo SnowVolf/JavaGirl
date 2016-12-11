@@ -18,6 +18,9 @@
         <activity
             android:name=".SettingsActivity"
             android:label="@string/title_activity_settings"></activity>
+        <activity
+            android:name=".AboutActivity"
+            android:label="@string/about_program"></activity>
     </application>
 
 </manifest>

@@ -1,13 +1,19 @@
 package ru.SnowVolf.JavaGirl;
 
+import android.Manifest;
+import android.app.Activity;
+import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.net.Uri;
+import android.os.Build;
+import android.os.Environment;
 import android.os.Process;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
@@ -23,11 +29,14 @@ import android.widget.Toast;
 
 import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
+import com.github.jksiezni.permissive.PermissionsGrantedListener;
+import com.github.jksiezni.permissive.PermissionsRefusedListener;
+import com.github.jksiezni.permissive.Permissive;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Objects;
+
 
 public class MainActivity extends AppCompatActivity {
     @Override
@@ -56,33 +65,56 @@ public class MainActivity extends AppCompatActivity {
             GoToGit();
             return true;
         }else if (id == R.id.about){
-            showAboutDialog();
+            Intent abt = new Intent(this, AboutActivity.class);
+            startActivity(abt);
+            //showAboutDialog();
             return true;
         }else if (id == R.id.changelog){
             showChangelog();
             return true;
         }else if (id==R.id.settings) {
-            Intent intent = new Intent(this, SettingsActivity.class);
-            startActivity(intent);
+            Intent setting = new Intent(this, SettingsActivity.class);
+            startActivity(setting);
+            return true;
+        } else if (id == R.id.open_girl){
+            openGirlImage();
             return true;
         }
             return super.onOptionsItemSelected(item);
 
     }
     public void GoToGit(){
-        Uri uri = Uri.parse("https://github.com/SnowVolf/JavaGirl/");
-            Intent intent = new Intent(Intent.ACTION_VIEW, uri);
-            startActivity(intent);
+        new MaterialDialog.Builder(this)
+                .content(R.string.choose_fork)
+                .positiveText(R.string.master)
+                .neutralText(R.string.alpha)
+                .onPositive(new MaterialDialog.SingleButtonCallback(){
+                    @Override
+                    public void onClick(@NonNull MaterialDialog materialDialog, @NonNull DialogAction dialogAction){
+                        Uri uri = Uri.parse("https://github.com/SnowVolf/JavaGirl/tree/master");
+                        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                        startActivity(intent);
+                    }
+                })
+                .onNeutral(new MaterialDialog.SingleButtonCallback(){
+                    @Override
+                    public void onClick(@NonNull MaterialDialog materialDialog, @NonNull DialogAction dialogAction){
+                        Uri uri = Uri.parse("https://github.com/SnowVolf/JavaGirl/tree/alpha");
+                        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+                        startActivity(intent);
+                    }
+                })
+                .show();
     }
     //собираем инфу о приложении
-    public void showAboutDialog(){
+    /*public void showAboutDialog(){
         new MaterialDialog.Builder(this)
                 .title(getBuildName(this))
                 .content(R.string.about_content)
                 .positiveText(R.string.cle_ar)
                 .positiveColorRes(R.color.colorAccent)
                 .show();
-    }
+    }*/
     public static String getBuildName(Context context){
         String programBuild = context.getString(R.string.app_name);
         try{
@@ -91,7 +123,7 @@ public class MainActivity extends AppCompatActivity {
             programBuild += " v."+pkgInfo.versionName+" build "+pkgInfo.versionCode;
 
 
-        }catch (PackageManager.NameNotFoundException e1){
+        }catch (PackageManager.NameNotFoundException e){
         }return programBuild;
     }
     public void onGirlClick(View v){
@@ -107,8 +139,9 @@ public class MainActivity extends AppCompatActivity {
             ImageView girlImageView = new ImageView(getApplicationContext());
             girlImageView.setImageResource(R.mipmap.ic_launcher);
             toastContainer.addView(girlImageView,1);
-        }catch (Exception VolfLog){/*Toast.makeText(getApplicationContext(),"Исключение обработано",Toast.LENGTH_LONG).show();*/
-           Snackbar.make(findViewById(R.id.activity_main), "Исключение обработано", Snackbar.LENGTH_LONG)
+        }
+        catch (Exception VolfLog){
+           Snackbar.make(findViewById(R.id.activity_main), "Исключение '"+ VolfLog.getMessage()+"' обработано", Snackbar.LENGTH_LONG)
                    .setDuration(2500)//2,5 секунды
                    .show();
         }
@@ -149,6 +182,62 @@ public class MainActivity extends AppCompatActivity {
                     }
                 })
                 .show();
+    }
+    public static final int CHOOSE_GIRL_IMG =1;
+    public String girlLocation = Environment.getExternalStorageDirectory().getPath();
+    public void openGirlImage() {
+        try {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                try {
+                    new Permissive.Request(Manifest.permission.READ_EXTERNAL_STORAGE).whenPermissionsGranted(new PermissionsGrantedListener() {
+                        @Override
+                        public void onPermissionsGranted(String[] permissions) throws SecurityException {
+                            openGirlFinder();
+                        }
+                    }).whenPermissionsRefused(new PermissionsRefusedListener() {
+                        @Override
+                        public void onPermissionsRefused(String[] permissions) {
+                            Toast.makeText(getApplicationContext(), "Разрешение на доступ нужно для загрузки фотографий в JavaGirl", Toast.LENGTH_LONG)
+                                    .show();
+                        }
+                    }).getContext();
+                } catch (Exception e) {
+                    e.getMessage();
+                }
+            } else {
+                openGirlFinder();
+            }
+        }catch (Exception ex){
+            Toast.makeText(getApplicationContext(), ex.getMessage(), Toast.LENGTH_LONG).show();
+        }
+    }
+    public void openGirlFinder(){
+        if (ContextCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED){
+            Toast.makeText(getApplicationContext(), "need perm", Toast.LENGTH_LONG)
+                    .show();
+            return;
+        }
+        try{
+            Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+            intent.setType("*/*");
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR2)
+                intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, true);
+           // intent.setDataAndType(Uri.parse("file://"+ girlLocation), "image/png")
+            startActivityForResult(intent, CHOOSE_GIRL_IMG);
+
+        }catch (ActivityNotFoundException ex){
+            Toast.makeText(getApplicationContext(),"Файл менеджер не найден!", Toast.LENGTH_LONG)
+                    .show();
+        }catch (Exception ex){
+            Toast.makeText(getApplicationContext(),"тест", Toast.LENGTH_LONG).show();
+        }
+    }
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == CHOOSE_GIRL_IMG && resultCode == Activity.RESULT_OK) {
+            //TODO: написать обработчик
+        }
     }
     public void onBackPressed(){
         finish();
