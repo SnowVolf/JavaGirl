@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.net.Uri;
@@ -24,7 +25,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 import com.afollestad.materialdialogs.DialogAction;
@@ -33,10 +34,13 @@ import com.github.jksiezni.permissive.PermissionsGrantedListener;
 import com.github.jksiezni.permissive.PermissionsRefusedListener;
 import com.github.jksiezni.permissive.Permissive;
 
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-
+import java.text.SimpleDateFormat;
+import java.util.zip.ZipEntry;
+import java.util.zip.ZipFile;
 
 public class MainActivity extends AppCompatActivity {
     @Override
@@ -81,7 +85,6 @@ public class MainActivity extends AppCompatActivity {
             return true;
         }
             return super.onOptionsItemSelected(item);
-
     }
     public void GoToGit(){
         new MaterialDialog.Builder(this)
@@ -106,7 +109,6 @@ public class MainActivity extends AppCompatActivity {
                 })
                 .show();
     }
-    //собираем инфу о приложении
     /*public void showAboutDialog(){
         new MaterialDialog.Builder(this)
                 .title(getBuildName(this))
@@ -115,16 +117,34 @@ public class MainActivity extends AppCompatActivity {
                 .positiveColorRes(R.color.colorAccent)
                 .show();
     }*/
+    //собираем инфу о приложении
     public static String getBuildName(Context context){
         String programBuild = context.getString(R.string.app_name);
         try{
             String pkg = context.getPackageName();
             PackageInfo pkgInfo = context.getPackageManager().getPackageInfo(pkg, PackageManager.GET_META_DATA);
-            programBuild += " v."+pkgInfo.versionName+" build "+pkgInfo.versionCode;
-
-
+            programBuild += " v."+pkgInfo.versionName+" build "+pkgInfo.versionCode;//параметры задаются в build.gradle
         }catch (PackageManager.NameNotFoundException e){
+            e.printStackTrace();
         }return programBuild;
+    }
+    //получаем дату компиляции
+    //
+    public String getCompilationDate(Context context){
+        String comp = context.getString(R.string.ot);//префикс
+        try {
+            ApplicationInfo ai = getPackageManager().getApplicationInfo(getPackageName(),0);
+            ZipFile zf = new ZipFile(ai.sourceDir);//открываем апк
+            //выбираем classes.dex. можно выбрать resources.arcs,
+            //AndroidManifest.xml.. не суть важно.
+            ZipEntry ze = zf.getEntry("classes.dex");
+            long time = ze.getTime();//получаем дату
+            String date = SimpleDateFormat.getInstance().format(new java.util.Date(time));//выбираем формат даты
+            zf.close();
+            comp+=" ["+date+"]";//ставим скобки до и после даты
+        }catch (Exception ex){
+            ex.printStackTrace();
+        } return comp;
     }
     public void onGirlClick(View v){
         String[] rnd = new String[]{
@@ -133,21 +153,26 @@ public class MainActivity extends AppCompatActivity {
         };
         Toast toast = Toast.makeText(getApplicationContext(), rnd[(int) (Math.random()*rnd.length)], Toast.LENGTH_SHORT);
         toast.show();
+        //позиция тоста - чуть ниже тулбара
+        //измеряется в px
         toast.setGravity(Gravity.TOP, 0,100);
         try {
-            LinearLayout toastContainer = (LinearLayout) toast.getView();
+            //5.0+ должен использовать RelativeLayout, при использовании
+            //LinearLayout (Android <5.x) картинка не показывается
+            RelativeLayout toastContainer = (RelativeLayout) toast.getView();
             ImageView girlImageView = new ImageView(getApplicationContext());
             girlImageView.setImageResource(R.mipmap.ic_launcher);
             toastContainer.addView(girlImageView,1);
         }
-        catch (Exception VolfLog){
-           Snackbar.make(findViewById(R.id.activity_main), "Исключение '"+ VolfLog.getMessage()+"' обработано", Snackbar.LENGTH_LONG)
+        catch (Exception e){
+           Snackbar.make(findViewById(R.id.activity_main), "Исключение '"+ e.getMessage()+"' обработано", Snackbar.LENGTH_LONG)
                    .setDuration(2500)//2,5 секунды
                    .show();
         }
         toast.show();
     }
     public void onDeviantArtClick(View view){
+        //заглушка
         Snackbar.make(findViewById(R.id.myGirl), R.string.coming_soon, Snackbar.LENGTH_SHORT)
         .show();
     }
@@ -157,35 +182,34 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
     private void showChangelog() {
-        final StringBuilder sb = new StringBuilder();
+        final StringBuilder sbd = new StringBuilder();
         try {
-
-            BufferedReader br = new BufferedReader(new InputStreamReader(getAssets().open("change.log"), "UTF-8"));
+            BufferedReader bfr = new BufferedReader(new InputStreamReader(getAssets().open("change.log"), "UTF-8"));
             String line;
-            while ((line = br.readLine()) != null) {
-                sb.append(line).append("\n");
+            while ((line = bfr.readLine()) != null) {
+                sbd.append(line).append("\n");
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
-        final String clToast = "<b><font color=\"#c62828\">Powered by Snow Volf</font><p><font color=\"#1565c0\"><i>А это текст другого цвета с курсивом</i></font></b><p>A вот это обычный не текст";
+        final String clToast = "<b><font color=\"#c62828\">Powered by Snow Volf</font><br><font color=\"#1565c0\"><i>А это текст другого цвета с курсивом</i></font></b><br>A вот это обычный не текст";
         new MaterialDialog.Builder(this)
-                .title(getBuildName(this))
-                .content(sb)
+                //в title забираем данные из PM и Date
+                .title(getBuildName(this)+getCompilationDate(this))
+                .content(sbd)
                 .positiveText(R.string.ok)
-                .neutralText("Debug")
+                .neutralText(R.string.debug)
                 .onNeutral(new MaterialDialog.SingleButtonCallback(){
                     @Override
                     public void onClick(@NonNull MaterialDialog materialDialog, @NonNull DialogAction dialogAction){
-                        Toast tst = Toast.makeText(getApplicationContext(),Html.fromHtml(clToast), Toast.LENGTH_LONG);
+                        Toast tst = Toast.makeText(getApplicationContext(), Html.fromHtml(clToast), Toast.LENGTH_LONG);
                         tst.show();
-                    }
-                })
-                .show();
+                    }}).show();
     }
     public static final int CHOOSE_GIRL_IMG =1;
     public String girlLocation = Environment.getExternalStorageDirectory().getPath();
     public void openGirlImage() {
+        Toast.makeText(getApplicationContext(), R.string.in_developing,Toast.LENGTH_LONG).show();
         try {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                 try {
@@ -197,8 +221,7 @@ public class MainActivity extends AppCompatActivity {
                     }).whenPermissionsRefused(new PermissionsRefusedListener() {
                         @Override
                         public void onPermissionsRefused(String[] permissions) {
-                            Toast.makeText(getApplicationContext(), "Разрешение на доступ нужно для загрузки фотографий в JavaGirl", Toast.LENGTH_LONG)
-                                    .show();
+                            Toast.makeText(getApplicationContext(), "Разрешение на доступ нужно для загрузки фотографий в JavaGirl", Toast.LENGTH_LONG).show();
                         }
                     }).getContext();
                 } catch (Exception e) {
@@ -213,8 +236,7 @@ public class MainActivity extends AppCompatActivity {
     }
     public void openGirlFinder(){
         if (ContextCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED){
-            Toast.makeText(getApplicationContext(), "need perm", Toast.LENGTH_LONG)
-                    .show();
+            Toast.makeText(getApplicationContext(), "need perm", Toast.LENGTH_LONG).show();
             return;
         }
         try{
@@ -226,8 +248,7 @@ public class MainActivity extends AppCompatActivity {
             startActivityForResult(intent, CHOOSE_GIRL_IMG);
 
         }catch (ActivityNotFoundException ex){
-            Toast.makeText(getApplicationContext(),"Файл менеджер не найден!", Toast.LENGTH_LONG)
-                    .show();
+            Toast.makeText(getApplicationContext(),"Файл менеджер не найден!", Toast.LENGTH_LONG).show();
         }catch (Exception ex){
             Toast.makeText(getApplicationContext(),"тест", Toast.LENGTH_LONG).show();
         }
