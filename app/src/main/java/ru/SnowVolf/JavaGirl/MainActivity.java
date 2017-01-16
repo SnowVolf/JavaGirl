@@ -131,7 +131,7 @@ public class MainActivity extends AppCompatActivity {
     //получаем дату компиляции
     //
     public String getCompilationDate(Context context){
-        String comp = context.getString(R.string.ot);//префикс
+        String pref = context.getString(R.string.ot);//префикс
         try {
             ApplicationInfo ai = getPackageManager().getApplicationInfo(getPackageName(),0);
             ZipFile zf = new ZipFile(ai.sourceDir);//открываем апк
@@ -141,10 +141,10 @@ public class MainActivity extends AppCompatActivity {
             long time = ze.getTime();//получаем дату
             String date = SimpleDateFormat.getInstance().format(new java.util.Date(time));//выбираем формат даты
             zf.close();
-            comp+=" ["+date+"]";//ставим скобки до и после даты
+            pref+=" ["+date+"]";//ставим скобки до и после даты
         }catch (Exception ex){
             ex.printStackTrace();
-        } return comp;
+        } return pref;
     }
     public void onGirlClick(View v){
         String[] rnd = new String[]{
@@ -182,6 +182,7 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
     private void showChangelog() {
+        String bld = BuildConfig.BUILD_TIME;
         final StringBuilder sbd = new StringBuilder();
         try {
             BufferedReader bfr = new BufferedReader(new InputStreamReader(getAssets().open("change.log"), "UTF-8"));
@@ -195,7 +196,7 @@ public class MainActivity extends AppCompatActivity {
         final String clToast = "<b><font color=\"#c62828\">Powered by Snow Volf</font><br><font color=\"#1565c0\"><i>А это текст другого цвета с курсивом</i></font></b><br>A вот это обычный не текст";
         new MaterialDialog.Builder(this)
                 //в title забираем данные из PM и Date
-                .title(getBuildName(this)+getCompilationDate(this))
+                .title(getBuildName(this)/*+getCompilationDate(this)*/+bld)
                 .content(sbd)
                 .positiveText(R.string.ok)
                 .neutralText(R.string.debug)

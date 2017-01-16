@@ -84,30 +84,12 @@
     </item>
     <item
         is-multidex="false"
-        jar="C:\ProjectX\JavaGirl_V2\app\build\intermediates\exploded-aar\com.mikepenz\fastadapter\2.1.0\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="7118aee70be2579da7bc488325e2c2ba9f668514">
-        <dex dex="C:\ProjectX\JavaGirl_V2\app\build\intermediates\pre-dexed\debug\com.mikepenz-fastadapter-2.1.0_b5e29ec57bc51ff58172993a5e31c7ed21fb5bff.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="C:\ProjectX\JavaGirl_V2\app\build\intermediates\exploded-aar\com.android.support\support-compat\25.0.1\jars\libs\internal_impl-25.0.1.jar"
         jumboMode="false"
         optimize="true"
         revision="25.0.1"
         sha1="3af8cc51ef7088e56f132780da8c0bd858b6a6ad">
         <dex dex="C:\ProjectX\JavaGirl_V2\app\build\intermediates\pre-dexed\debug\internal_impl-25.0.1_13b03b4def4d03bb12e729b989c543512ae3d549.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\ProjectX\JavaGirl_V2\app\build\intermediates\exploded-aar\com.mikepenz\materialdrawer\5.8.1\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="e4c4c6db6020ed19f773bfe4e6d45662a1780489">
-        <dex dex="C:\ProjectX\JavaGirl_V2\app\build\intermediates\pre-dexed\debug\com.mikepenz-materialdrawer-5.8.1_2254673402c13be46ed0aa25f0012795fe5bbdd3.jar" />
     </item>
     <item
         is-multidex="false"
@@ -210,15 +192,6 @@
     </item>
     <item
         is-multidex="false"
-        jar="C:\ProjectX\JavaGirl_V2\app\build\intermediates\exploded-aar\com.mikepenz\iconics-core\2.8.0\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="dcac7435781db56e25ab17c3f662227c517fc327">
-        <dex dex="C:\ProjectX\JavaGirl_V2\app\build\intermediates\pre-dexed\debug\com.mikepenz-iconics-core-2.8.0_af6d1a8cdc36b8b12d8e846b9033d826c67c0419.jar" />
-    </item>
-    <item
-        is-multidex="false"
         jar="C:\ProjectX\JavaGirl_V2\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\25.0.1\jars\libs\internal_impl-25.0.1.jar"
         jumboMode="false"
         optimize="true"
@@ -234,15 +207,6 @@
         revision="25.0.1"
         sha1="9a397ba5477bf49ae0418cc3e392b3c0e5a112d1">
         <dex dex="C:\ProjectX\JavaGirl_V2\app\build\intermediates\pre-dexed\debug\kotlin-stdlib-1.0.5-2_1ba35007d3ead9ee0cbacf7946173f2ebed9f184.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="C:\ProjectX\JavaGirl_V2\app\build\intermediates\exploded-aar\com.mikepenz\materialize\1.0.0\jars\classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="25.0.1"
-        sha1="84c98924eff3106f306c3e233cc2e6d84744f518">
-        <dex dex="C:\ProjectX\JavaGirl_V2\app\build\intermediates\pre-dexed\debug\com.mikepenz-materialize-1.0.0_af583430bab8f9fbc9e0815d264af2e0347816fc.jar" />
     </item>
     <item
         is-multidex="false"

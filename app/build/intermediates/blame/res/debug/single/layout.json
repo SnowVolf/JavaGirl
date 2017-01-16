@@ -144,12 +144,12 @@
         "source": "C:\\ProjectX\\JavaGirl_V2\\app\\src\\main\\res\\layout\\girl.xml"
     },
     {
-        "merged": "C:\\ProjectX\\JavaGirl_V2\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_action_tombstone.xml",
-        "source": "C:\\ProjectX\\JavaGirl_V2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\layout\\notification_action_tombstone.xml"
-    },
-    {
         "merged": "C:\\ProjectX\\JavaGirl_V2\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_tab_icon.xml",
         "source": "C:\\ProjectX\\JavaGirl_V2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\design\\25.0.1\\res\\layout\\design_layout_tab_icon.xml"
+    },
+    {
+        "merged": "C:\\ProjectX\\JavaGirl_V2\\app\\build\\intermediates\\res\\merged\\debug\\layout\\notification_action_tombstone.xml",
+        "source": "C:\\ProjectX\\JavaGirl_V2\\app\\build\\intermediates\\exploded-aar\\com.android.support\\appcompat-v7\\25.0.1\\res\\layout\\notification_action_tombstone.xml"
     },
     {
         "merged": "C:\\ProjectX\\JavaGirl_V2\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_menu.xml",
